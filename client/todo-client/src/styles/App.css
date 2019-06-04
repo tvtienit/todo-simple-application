@@ -1,0 +1,7 @@
+.app-title {
+    font-weight: "bold";
+    color: "#c0c0c0"; 
+    display: 'flex';  
+    justify-content: 'center'; 
+    align-items:'center';
+}
