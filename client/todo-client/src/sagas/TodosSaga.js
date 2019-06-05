@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from 'redux-saga/effects'
+import { put, call, takeEvery, takeLatest } from 'redux-saga/effects'
 import { getTodos, addTodo, changeTodoState } from '../api/todos'; 
 import { fetchTodosSuccess, fetchTodos, changeTodoStateSuccess } from '../actions';
 
@@ -22,7 +22,7 @@ function* applyChangeTodoState(action) {
 }
 
 export default function* rootSaga() {
-    yield takeEvery('FETCH_TODO', applyTodos)
+    yield takeLatest('FETCH_TODO', applyTodos)
     yield takeEvery('ADD_TODO', applyAddTodo)
     yield takeEvery('CHANGE_TODO_STATE', applyChangeTodoState)
 }
